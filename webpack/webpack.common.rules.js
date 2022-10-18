@@ -17,7 +17,7 @@ module.exports = function getRules(env) {
     },
     {
       test: /\.jsx$|\.es6$|\.js$/,
-      exclude: /node_modules(?![\\/]gui-library)/,
+      exclude: /node_modules(?![\\/]@oliasoft-open-source\/react-ui-library)/,
       use: {
         loader: 'babel-loader',
         options: {
