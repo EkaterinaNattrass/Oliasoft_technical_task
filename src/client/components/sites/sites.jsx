@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Button, Card, Heading, Column, Row} from '~gui-library';
+import {Button, Card, Heading, Column, Row} from '@oliasoft-open-source/react-ui-library';
 import {sitesLoaded} from "~store/entities/sites/sites";
 import styles from './sites.module.less';
 

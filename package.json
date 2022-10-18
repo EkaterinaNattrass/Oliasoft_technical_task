@@ -62,12 +62,12 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@oliasoft-open-source/react-ui-library": "^2.2.2",
     "@reduxjs/toolkit": "^1.6.1",
     "classnames": "^2.3.1",
     "connected-react-router": "^6.9.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "gui-library": "git+https://gitlab.com/oliasoft-open-source/react-ui-library.git#490",
     "lodash": "^4.17.21",
     "nodemon": "^2.0.12",
     "prop-types": "^15.7.2",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import {TopBar} from '~gui-library';
+import {TopBar} from '@oliasoft-open-source/react-ui-library';
 import Logo from '../../images/logo@2x.png';
 
 import { Main } from '../../views/main/main';

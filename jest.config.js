@@ -6,5 +6,5 @@ module.exports = {
   },
   moduleFileExtensions: ['js', 'jsx'],
   moduleDirectories: ['node_modules'],
-  transformIgnorePatterns: ["/node_modules/(?!gui-library)"]
+  transformIgnorePatterns: ["/node_modules/(?!@oliasoft-open-source/react-ui-library)"]
 };
