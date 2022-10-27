@@ -1,5 +1,10 @@
+image: node:18
+
+stages:
+  - test
+  - release
+
 test:
-  image: node:14
   stage: test
   only:
     - merge_requests
@@ -10,3 +15,43 @@ test:
 cache:
   paths:
     - node_modules/
+
+# Push a tag and notify MatterMost
+# Loosely inspired by:
+# - https://markswanderingthoughts.nl/tagging-in-gitlab-ci-pipeline-using-deploy-keys/
+# - https://www.garybell.co.uk/creating-a-release-with-gitlab-ci-and-composer/
+publish:
+  stage: release
+  only:
+    - master
+  script:
+    # Get the version from package.json
+    - VERSION=$(node -p "require('./package.json').version")
+    # Prepare MatterMost message
+    - MESSAGE="🤖 Hiring Test version $VERSION released"
+    - chmod +x ./scripts/send-mattermost-message.sh
+    # Configure git
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY_TOOLKIT" > ~/.ssh/id_rsa; chmod 0600 ~/.ssh/id_rsa
+    - echo "StrictHostKeyChecking no " > /root/.ssh/config
+    - git config --global http.sslVerify false
+    - git config --global user.email "$GITLAB_USER_EMAIL"
+    - git config --global user.name "🤖 GitLab CI/CD"
+    - echo "setting origin remote to 'git@$CI_SERVER_HOST:$CI_PROJECT_PATH.git'"
+    - git remote rm origin
+    - git remote add origin git@$CI_SERVER_HOST:$CI_PROJECT_PATH.git
+    - git fetch --quiet
+    - git checkout "$CI_BUILD_REF_NAME"
+    # Only complete pipeline if version does not already exist
+    - >
+      if [ $(git tag -l "$VERSION") ]; then
+        echo "Version $VERSION already exists"
+        exit 1
+      else
+        echo "Tagging release in git"
+        git tag $VERSION -m "🤖 Tagged by Gitlab CI/CD Pipeline" -m "For further reference see $CI_PIPELINE_URL" -m "[skip ci]"
+        echo "Pushing tag to remote repository"
+        git push origin $VERSION --no-verify
+        echo "Notifying MatterMost"
+        ./scripts/send-mattermost-message.sh "$MATTERMOST_BOT_KEY" "$MESSAGE"
+      fi
