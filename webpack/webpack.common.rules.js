@@ -5,6 +5,12 @@ module.exports = function getRules(env) {
 
   return [
     {
+      test: /\.m?js/,
+      resolve: {
+        fullySpecified: false
+      }
+    },
+    {
       test: /\.html$/,
       use: [
         {
@@ -17,7 +23,7 @@ module.exports = function getRules(env) {
     },
     {
       test: /\.jsx$|\.es6$|\.js$/,
-      exclude: /node_modules(?![\\/]@oliasoft-open-source[\\/]react-ui-library)/,
+      exclude: /node_modules/,
       use: {
         loader: 'babel-loader',
         options: {
