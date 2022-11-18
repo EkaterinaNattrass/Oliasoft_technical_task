@@ -6,7 +6,7 @@ import { Routes } from './navigation/routes/routes';
 import history from '~client/history';
 import configureStore from '~store/configureStore';
 
-import '@oliasoft-open-source/react-ui-library/src/style/global.less';
+import '@oliasoft-open-source/react-ui-library/dist/global.css';
 import './styles/global.less';
 
 const store = configureStore(history);

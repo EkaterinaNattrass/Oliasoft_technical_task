@@ -5,6 +5,12 @@ module.exports = function getRules(env) {
 
   return [
     {
+      test: /\.m?js/,
+      resolve: {
+        fullySpecified: false
+      }
+    },
+    {
       test: /\.html$/,
       use: [
         {
