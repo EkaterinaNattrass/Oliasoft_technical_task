@@ -28,7 +28,7 @@ publish:
     # Get the version from package.json
     - VERSION=$(node -p "require('./package.json').version")
     # Prepare MatterMost message
-    - MESSAGE="🤖 Hiring Test version $VERSION released"
+    - MESSAGE="🤖 Hiring Test version $VERSION released ([release notes](https://gitlab.com/oliasoft-open-source/hiring-test/-/blob/master/release-notes.md))"
     - chmod +x ./scripts/send-mattermost-message.sh
     # Configure git
     - mkdir -p ~/.ssh
