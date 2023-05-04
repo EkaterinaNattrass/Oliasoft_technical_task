@@ -41,7 +41,7 @@ publish:
     - git remote rm origin
     - git remote add origin git@$CI_SERVER_HOST:$CI_PROJECT_PATH.git
     - git fetch --quiet
-    - git checkout "$CI_BUILD_REF_NAME"
+    - git checkout "$CI_COMMIT_REF_NAME"
     # Only complete pipeline if version does not already exist
     - >
       if [ $(git tag -l "$VERSION") ]; then
