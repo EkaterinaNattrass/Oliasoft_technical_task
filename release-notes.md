@@ -2,7 +2,7 @@
 
 ## 2.3.0
 
-- Switch to vite ([OW-12166](https://oliasoft.atlassian.net/browse/OW-12166))
+- Switch to vite and vitest ([OW-12166](https://oliasoft.atlassian.net/browse/OW-12166))
 
 ## 2.2.0
 
