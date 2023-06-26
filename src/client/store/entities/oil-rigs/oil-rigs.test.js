@@ -1,8 +1,5 @@
-import fetchMock from "jest-fetch-mock";
 import oilRigs, {oilRigsLoaded, oilRigsRequested} from './oil-rigs';
 import configureStore from '../../configureStore';
-
-fetchMock.enableMocks();
 
 const hello = () => 'hello world test';
 
@@ -10,7 +7,7 @@ describe('employees', () => {
   let store;
   beforeEach(() => {
     store = configureStore();
-    fetch.resetMocks();
+    fetchMock.resetMocks();
   })
 
   const oilRigsSlice = () => store.getState().entities.oilRigs;

@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import getMiddleware from "./middleware/getMiddleware";
-import rootReducer from '~store/reducer';
+import rootReducer from 'store/reducer';
 
 const configureAppStore = (history) => {
   const reducer = rootReducer(history);
