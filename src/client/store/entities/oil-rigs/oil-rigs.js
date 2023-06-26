@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {apiCallBegan} from "~store/api";
+import {apiCallBegan} from "store/api";
 
 const slice = createSlice({
   name: 'oilRigs',

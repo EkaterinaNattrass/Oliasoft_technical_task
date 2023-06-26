@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Button, Card, Heading, Column, Row} from '@oliasoft-open-source/react-ui-library';
-import {oilRigsLoaded} from "~store/entities/oil-rigs/oil-rigs";
+import {oilRigsLoaded} from "store/entities/oil-rigs/oil-rigs";
 import styles from './oil-rigs.module.less';
 
 const OilRigs = ({list, loading, oilRigsLoaded}) => {

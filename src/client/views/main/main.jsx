@@ -1,7 +1,7 @@
 import React from 'react';
 import {Heading, Page} from '@oliasoft-open-source/react-ui-library';
-import {Sites} from "~client/components/sites/sites";
-import {OilRigs} from "~client/components/oil-rigs/oil-rigs";
+import {Sites} from "client/components/sites/sites";
+import {OilRigs} from "client/components/oil-rigs/oil-rigs";
 
 export const Main = ({}) => {
   return (
