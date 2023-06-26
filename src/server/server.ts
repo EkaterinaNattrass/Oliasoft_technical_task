@@ -5,12 +5,11 @@ import oilRigsRoutes from './oil-rigs/oil-rigs.routes';
 
 const server = express();
 const port = process.env.port || 3000;
-const router = express.Router();
 
 server.use(cors());
 
 // Wire up routes
-server.get('/', (req, res) => {
+server.get('/', (_: any, res: any) => {
   res.send('Oliasoft Hiring Test Server says: Make some magic');
 });
 
