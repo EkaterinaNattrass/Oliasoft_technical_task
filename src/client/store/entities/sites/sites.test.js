@@ -1,8 +1,5 @@
-import fetchMock from "jest-fetch-mock";
 import sites, {sitesLoaded, sitesRequested} from './sites';
 import configureStore from '../../configureStore';
-
-fetchMock.enableMocks();
 
 const hello = () => 'hello world test';
 
@@ -10,10 +7,10 @@ describe('employees', () => {
   let store;
   beforeEach(() => {
     store = configureStore();
-    fetch.resetMocks();
+    fetchMock.resetMocks();
   })
 
-  const sitesSlice = () => store.getState().entities.sites;
+  const sitesSlice = () => store.getState()?.entities?.sites;
 
   /*
     Hello world test

@@ -27,5 +27,11 @@ export default () => {
     plugins: [
       react(),
     ],
+    test: {
+      globals: true,
+      setupFiles: [
+        "./setupVitest.js"
+      ]
+    },
   };
 };
