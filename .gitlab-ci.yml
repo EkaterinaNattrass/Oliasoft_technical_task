@@ -9,8 +9,8 @@ test:
   only:
     - merge_requests
   script:
-    - npm install --progress=false --no-save
-    - npm run test
+    - yarn install --progress=false --no-save
+    - yarn run test
 
 cache:
   paths:
