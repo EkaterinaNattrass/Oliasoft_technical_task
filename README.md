@@ -18,26 +18,26 @@ We've prepared a skeleton repository with everything needed to run the test app:
 - clone or download the repository: [gitlab.com/oliasoft-open-source/hiring-test](https://gitlab.com/oliasoft-open-source/hiring-test)
 
 ```
-npm install
+yarn install
 ```
 ## Running and Testing the code
 
 In order to run the client do:
 
 ```
-npm run client
+yarn run client
 ```
 
 Similar for server:
 
 ```
-npm run server
+yarn run server
 ```
 
 To run unit tests:
 
 ```
-npm run test
+yarn run test
 ```
 
 ## Challenge tasks
