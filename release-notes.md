@@ -1,5 +1,9 @@
 # Hiring Test Release Notes
 
+## 2.4.0
+
+- Setup Typescript configuration ([OW-12281](https://oliasoft.atlassian.net/browse/OW-12281))
+
 ## 2.3.0
 
 - Switch to vite and vitest ([OW-12166](https://oliasoft.atlassian.net/browse/OW-12166))
