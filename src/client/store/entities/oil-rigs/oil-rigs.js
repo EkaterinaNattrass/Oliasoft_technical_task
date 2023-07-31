@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {apiCallBegan} from "store/api";
+import { apiCallBegan } from 'client/store/middleware/api/api';
 
 const slice = createSlice({
   name: 'oilRigs',
@@ -28,10 +28,8 @@ export const {
 } = slice.actions;
 export default slice.reducer;
 
-const baseUrl = 'http://localhost:3000/api';
 const url = '/oil-rigs';
 export const oilRigsLoaded = () => apiCallBegan({
-  baseUrl,
   url,
   onStart: oilRigsRequested.type,
   onSuccess: oilRigsReceived.type,

@@ -1,12 +1,12 @@
 import sites, {sitesLoaded, sitesRequested} from './sites';
-import configureStore from '../../configureStore';
+import { configureAppStore }  from '../../configureStore';
 
 const hello = () => 'hello world test';
 
 describe('employees', () => {
   let store;
   beforeEach(() => {
-    store = configureStore();
+    store = configureAppStore();
     fetchMock.resetMocks();
   })
 

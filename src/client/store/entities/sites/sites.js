@@ -1,5 +1,5 @@
-import {createSlice} from '@reduxjs/toolkit';
-import {apiCallBegan} from "store/api";
+import { createSlice } from '@reduxjs/toolkit';
+import { apiCallBegan } from 'client/store/middleware/api/api';
 
 const slice = createSlice({
   name: 'sites',
@@ -28,10 +28,8 @@ export const {
 } = slice.actions;
 export default slice.reducer;
 
-const baseUrl = 'http://localhost:3000/api';
 const url = '/sites';
 export const sitesLoaded = () => apiCallBegan({
-  baseUrl,
   url,
   onStart: sitesRequested.type,
   onSuccess: sitesReceived.type,
