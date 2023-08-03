@@ -31,6 +31,7 @@ export default () => {
     ],
     test: {
       globals: true,
+      environment: 'jsdom',
       setupFiles: [
         "./setupVitest.js"
       ]

@@ -1,10 +1,8 @@
-import {combineReducers} from 'redux';
-import {connectRouter} from 'connected-react-router';
+import { combineReducers } from '@reduxjs/toolkit';
 import entities from './entities';
 
-export const rootReducer = (history) => combineReducers({
-  ...(history ? {router: connectRouter(history)} : {}),
-  entities,
-});
-
-export default rootReducer;
+export const rootReducer = (routerReducer) =>
+  combineReducers({
+    router: routerReducer,
+    entities,
+  });
