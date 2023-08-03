@@ -1,5 +1,14 @@
 # Hiring Test Release Notes
 
+## 2.5.0
+
+- Small housekeeping tasks to align closer with our other repos
+  - TypeScript Redux API middleware ([OW-12623](https://oliasoft.atlassian.net/browse/OW-12623))
+  - `react-router` upgraded
+  - switch from `connected-react-router` to `redux-first-history`
+  - small package upgrades
+  - slight re-org of the client directory
+
 ## 2.4.0
 
 - Setup Typescript configuration ([OW-12281](https://oliasoft.atlassian.net/browse/OW-12281))
