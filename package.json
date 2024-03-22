@@ -41,8 +41,8 @@
     "vitest-fetch-mock": "^0.2.2"
   },
   "dependencies": {
-    "@oliasoft-open-source/react-ui-library": "^3.0.4",
-    "@oliasoft-open-source/units": "^3.3.0",
+    "@oliasoft-open-source/react-ui-library": "^4.2.8",
+    "@oliasoft-open-source/units": "^3.11.7",
     "@reduxjs/toolkit": "^1.9.5",
     "ajv": "^8.12.0",
     "ajv-errors": "^3.0.0",
