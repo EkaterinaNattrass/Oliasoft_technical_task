@@ -1,17 +1,16 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { TopBar } from '@oliasoft-open-source/react-ui-library';
-import Logo from 'client/views/images/logo@2x.png';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { TopBar } from "@oliasoft-open-source/react-ui-library";
+import Logo from "client/views/images/logo.svg";
 
-import { Main } from 'client/views/main/main';
+import { Main } from "client/views/main/main";
 
 export const App = () => {
   return (
     <>
       <TopBar
         title={{
-          logo: <img src={Logo} alt="logo" />,
-          label: 'Hiring Challenge'
+          logo: <img src={Logo} alt="logo" style={{ height: 28 }} />,
         }}
       />
       <Routes>
