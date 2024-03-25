@@ -1,5 +1,9 @@
 # Hiring Test Release Notes
 
+## 2.6.0
+
+- Updated logo & GUI library to match new branding ([OW-13062](https://oliasoft.atlassian.net/browse/OW-13062))
+
 ## 2.5.0
 
 - Small housekeeping tasks to align closer with our other repos
