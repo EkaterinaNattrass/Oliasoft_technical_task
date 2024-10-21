@@ -1,6 +1,6 @@
 {
   "name": "@oliasoft-open-source/hiring-test",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "Oliasoft Hiring Challenge",
   "main": "src/client/index.jsx",
   "scripts": {

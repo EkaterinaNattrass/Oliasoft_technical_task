@@ -1,5 +1,9 @@
 # Hiring Test Release Notes
 
+## 2.7.0
+
+- Updated Node.js version to 22.10.0 ([OW-18529](https://oliasoft.atlassian.net/browse/OW-18529))
+
 ## 2.6.0
 
 - Updated logo & GUI library to match new branding ([OW-13062](https://oliasoft.atlassian.net/browse/OW-13062))
