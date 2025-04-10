@@ -1,6 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { createBrowserHistory } from 'history';
-import { createReduxHistoryContext } from 'redux-first-history';
 import { rootReducer } from './reducer';
 import api, {
   apiCallBegan,
@@ -8,17 +6,10 @@ import api, {
   apiCallFailed,
 } from './middleware/api/api';
 
-const browserHistory = createBrowserHistory();
-
-const { createReduxHistory, routerMiddleware, routerReducer } =
-  createReduxHistoryContext({
-    history: browserHistory,
-  });
-
 export const configureAppStore = () => {
   return configureStore({
     // configures Redux DevTools automatically
-    reducer: rootReducer(routerReducer),
+    reducer: rootReducer(),
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         serializableCheck: {
@@ -29,11 +20,9 @@ export const configureAppStore = () => {
           ],
         },
       })
-        .concat(routerMiddleware)
         .concat(api),
   });
 };
 const store = configureAppStore();
-const history = createReduxHistory(store);
 
-export { store, history };
+export { store };
