@@ -13,7 +13,7 @@ type AppState = {};
 type StoreType = MockStoreEnhanced<AppState>;
 
 const middleware = [api];
-const mockStore = configureStore<AppState, any>(middleware);
+const mockStore = configureStore<AppState, any>(middleware as any);
 
 describe('API middleware', () => {
   let mockHTTP: MockAdapter;
