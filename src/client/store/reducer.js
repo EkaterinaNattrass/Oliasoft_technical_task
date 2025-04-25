@@ -1,8 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import entities from './entities';
 
-export const rootReducer = (routerReducer) =>
+export const rootReducer = () =>
   combineReducers({
-    router: routerReducer,
     entities,
   });
