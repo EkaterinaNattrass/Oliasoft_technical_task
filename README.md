@@ -93,8 +93,8 @@ Extend the application to add new endpoints for:
 ## Tips
 
 - use modern JavaScript (ES6+)
-- use modern React (function+hooks components)
-- use modern Redux (Redux Toolkit with Ducks pattern)
+- use modern React approach
+- use some state management functionality (either built-in within React or other)
 - re-use GUI components from our [UI Library](https://gitlab.com/oliasoft-open-source/react-ui-library) (see the
  reference [Storybook](https://oliasoft-open-source.gitlab.io/react-ui-library/))
 - use CSS modules for styling
