@@ -99,6 +99,11 @@ Extend the application to add new endpoints for:
  reference [Storybook](https://oliasoft-open-source.gitlab.io/react-ui-library/))
 - use CSS modules for styling
 
+## Use of AI tools 
+
+  While we use AI as an efficiency tool in our organization, we want you to solve this without using any AI influence as we want to see how **you** are thinking and working. 
+  Therefore, **any** agent mode solved code will not be considered (neither will your application)
+
 ## Submission
 
 Submit your completed challenge by zipping it and emailing it to us (including the full git repo with history).
