@@ -1,16 +1,23 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {Button, Card, Heading, Column, Row} from '@oliasoft-open-source/react-ui-library';
-import {sitesLoaded} from "store/entities/sites/sites";
-import styles from './sites.module.less';
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import {
+  Button,
+  Card,
+  Heading,
+  Column,
+  Row,
+  Accordion,
+} from "@oliasoft-open-source/react-ui-library";
+import { sitesLoaded } from "store/entities/sites/sites";
+import styles from "./sites.module.less";
 
-const Sites = ({list, loading, sitesLoaded}) => {
+const Sites = ({ list, loading, sitesLoaded }) => {
+  const [expandedSites, setExpandedSites] = React.useState(false);
+  const toggleSites = () => {
+    setExpandedSites((prev) => !prev);
+  }
   return (
-    <Card
-      heading={
-        <Heading>List of oil sites</Heading>
-      }
-    >
+    <Card heading={<Heading>List of oil sites</Heading>}>
       <Row>
         <Column width={200}>
           <Button
@@ -25,9 +32,29 @@ const Sites = ({list, loading, sitesLoaded}) => {
             {list.length ? (
               <ul>
                 {list.map((site, i) => (
-                  <li key={i}>
-                    {site.name}
-                  </li>
+                  <Accordion
+                    key={i}
+                    heading={site.name}
+                    managed
+                    bordered
+                    onClick={() => toggleSites()}
+                  >
+                      <>
+                      <>Country: </>
+                     {site.country}
+                      <br />
+                      { site.oilRigs.length ? (
+                        <>
+                        <>Rigs:</>
+                        <ul>
+                          {site.oilRigs.map((rig, id) => (<li key={id}>{rig}</li>))}
+                        </ul>
+                        </>
+                      ) : (
+                        <>No rigs found</>
+                      )}
+                    </>
+                  </Accordion>
                 ))}
               </ul>
             ) : (
@@ -38,22 +65,19 @@ const Sites = ({list, loading, sitesLoaded}) => {
       </Row>
     </Card>
   );
-}
+};
 
-const mapStateToProps = ({entities}) => {
-  const {sites} = entities;
+const mapStateToProps = ({ entities }) => {
+  const { sites } = entities;
   return {
     loading: sites.loading,
-    list: sites.list
-  }
+    list: sites.list,
+  };
 };
 
 const mapDispatchToProps = {
   sitesLoaded,
 };
 
-const ConnectedSites = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Sites);
-export {ConnectedSites as Sites};
+const ConnectedSites = connect(mapStateToProps, mapDispatchToProps)(Sites);
+export { ConnectedSites as Sites };
